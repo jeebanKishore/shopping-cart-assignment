@@ -1,0 +1,83 @@
+.category-sidemenu {
+  display: none;
+}
+
+.category-sidemenu article {
+  border-bottom: 1px solid #dad4d4;
+  cursor: pointer;
+}
+
+.category-sidemenu article button {
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 90%;
+  font-weight: 600;
+  color: #676363;
+  text-align: left;
+  padding: 20px 25px;
+  transition: 0.5s background-color, 0.5s color;
+}
+
+.category-sidemenu article button:hover {
+  background-color: #fcfbfb;
+  color: #d81b60;
+}
+
+.category-sidemenu article .active-category {
+  background-color: #fcfbfb;
+  color: #d81b60;
+}
+
+.category-dropdown {
+  height: 40px;
+  background-color: #d81b60;
+  padding: 5px;
+}
+
+.category-select {
+  display: block !important;
+  height: inherit;
+  background-color: transparent;
+  height: 100% !important;
+}
+
+::ng-deep .mat-select-trigger {
+  height: 100% !important;
+}
+
+::ng-deep .mat-select-trigger .mat-select-value {
+  text-align: center !important;
+}
+
+::ng-deep .mat-select-trigger .mat-select-value span.mat-select-min-line {
+  color: #fff !important;
+  position: relative !important;
+  top: 3px !important;
+}
+
+::ng-deep .mat-select-trigger .mat-select-value .mat-select-value-text .mat-select-min-line {
+  color: #fff !important;
+  font-size: 100%;
+  font-weight: 600;
+}
+
+::ng-deep .mat-select-trigger .mat-select-arrow-wrapper .mat-select-arrow {
+  color: #fff !important;
+}
+
+::ng-deep .mat-select-panel-wrap {
+  flex-basis: 90% !important;
+}
+
+@media only screen and (min-width: 480px) {
+  .category-sidemenu {
+    display: block;
+  }
+
+  .category-dropdown {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+<article tabindex="0" class="category-section">
+  <div class="category" [ngClass]="{'flexReverse' : !isEven}">
+      <img [src]="category.hasOwnProperty('imageUrl') ? category.imageUrl.replace('static','assets') : 'assets/images/image_not_found.svg'" [alt]="category.description">
+      <div class="category-content">
+          <h1>{{category.name}}</h1>
+          <div class="category-description">{{category.description}}</div>
+          <button class="category-navigate-btn" [routerLink]="['/product-page']" [queryParams]="{category: category.id}" aria-label="click to explore">
+              <a tabindex="-1">{{category.key}}</a>
+          </button>
+      </div>
+  </div>
+</article>

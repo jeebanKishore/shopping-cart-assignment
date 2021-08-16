@@ -1,0 +1,54 @@
+<mat-drawer-container class="cart-page-container" autosize>
+  <mat-drawer #drawer class="cart-page-sidenav" mode="side" position="end" autoFocus=true FocusOrigin=true aria-label="Products Cart">
+    <article  id="cart-header" tabindex="0">
+        <div class="cart-header">
+            <h1>{{'My Cart'}}</h1>
+          </div>
+          <div id="close-cart" (click)="toggleDrawer()" role="button" aria-label="close cart">
+            <img src="assets/images/close_black.svg" alt="cart">
+          </div>
+    </article>
+    <main class="cart-item-container">
+      <section class="empty-cart" *ngIf="this.appStateService.cartTotalCount === 0" tabindex="0">
+          <h1>No items in your cart</h1>
+          <h2>Your favourite items just a click away</h2>
+      </section>
+      <section class="cart-items-list">
+          <article class="cart-item" *ngFor="let item of this.appStateService.cartItemsCollection" tabindex="0">
+              <div class="cart-item-img">
+                  <img [src]="item.imageURL.replace('static','assets')" [alt]="item.description">
+              </div>
+              <div class="cart-item-middle-content">
+                  <h1 class="cart-item-name">
+                      {{item.name}}
+                  </h1>
+                  <div class="cart-item-action">
+                      <a class="item-add" (click)="removeItem(item)" aria-label="remove item" role="button"><img src="assets/images/remove_circle.svg" alt="cart"></a>
+                      <span class="cart-item-count">{{ item.itemCount }}</span>
+                      <a class="item-remove"(click)="addItem(item)" aria-label="add item" role="button"><img src="assets/images/add_circle.svg" alt="cart"></a>
+                      <span class="cart-item-cross-sign">x</span>
+                      <span class="cart-item-price">{{'Rs ' + item.price}}</span>
+                  </div>
+              </div>
+              <div class="cart-item-total">
+                  {{'Rs ' + (item.price * item.itemCount)}}
+              </div>
+          </article>
+      </section>
+      <section class="cart-item-inner" *ngIf="this.appStateService.cartTotalCount !== 0">
+          <article class="cart-item-placeholder">
+              <img src="assets/images/lowest-price.png" alt="Lowest price image">
+              <h2>You won't find it cheaper anywhere</h2>
+          </article>
+      </section>
+      <section class="cart-item-checkout" *ngIf="this.appStateService.cartTotalCount !== 0" tabindex="0">
+          <h3>Promo code can be applied on payment page</h3>
+          <button class="cart-item-checkout-button primary" aria-label="Checkout items" (click)="toggleDrawer()">
+              <span class="left-button-side">Proceed to Checkout</span>
+              <span class="right-button-side">{{'Rs.' + this.appStateService.cartTotalCount}}</span>
+          </button>
+      </section>
+    </main>
+  </mat-drawer>
+
+</mat-drawer-container>

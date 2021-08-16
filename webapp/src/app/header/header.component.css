@@ -1,0 +1,118 @@
+header {
+  height: 4rem;
+  box-shadow: 0px 3px 2px #e2e2e2;
+}
+
+.header-container {
+  height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header-logo-div {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 95%;
+  cursor: pointer;
+}
+
+.header-logo-div img {
+  height: 80%;
+  margin-left: 5px;
+}
+
+.header-menu-div {
+  display: none;
+}
+
+.header-login-cart-div {
+  width: 6%;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.header-login-cart-div-login {
+  display: flex;
+  align-items: center;
+  height: 40%;
+  justify-content: center;
+}
+
+.header-login-cart-div-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  background: #ececec;
+  height: 60%;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+.header-login-cart-div-cart img {
+  height: 1.8em;
+  fill: #d81b60;
+}
+
+.header-login-cart-div-cart span {
+  font-size: 100%;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+nav {
+  margin-left: 30px;
+}
+
+nav a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: #565656;
+}
+
+.small-nav a {
+  font-size: 100%;
+  font-weight: 600;
+}
+
+.active-link {
+  color: #d81b60;
+}
+
+@media only screen and (min-width: 480px) {
+  header {
+    height: 4.5rem;
+  }
+
+  .header-logo-div {
+    flex-grow: 1;
+    height: 95%;
+  }
+
+  .header-logo-div img {
+    height: inherit;
+  }
+
+  .header-menu-div {
+    flex-grow: 10;
+    margin-top: 30px;
+    display: block;
+  }
+
+  .header-menu-div .header-menu-div-nav a {
+    font-size: 110%;
+    font-weight: 600;
+  }
+
+  .header-login-cart-div {
+    flex-grow: 1;
+    height: 100%;
+    width: 10%;
+  }
+}

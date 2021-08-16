@@ -1,0 +1,34 @@
+<section class="main-section" aria-label="products section" role="main" aria-label="main section">
+  <ng-container *ngFor="let product of products">
+      <div class="parent-card" aria-label="product" *ngIf="product.visible || product.visible==undefined">
+          <div class="main-card" tabindex="0">
+              <h1 aria-label="product name">{{product.name}}</h1>
+              <div class="image-desc">
+                  <img [src]="product.imageURL.replace('static','assets')" alt="">
+                  <div class="product-description">
+                      <div class="description">
+                          <p>{{product.description}}</p>
+                      </div>
+                      <button class="addToCart-btn primary" (click)="addToCart(product)">
+                          {{'Buy Now @' + product.price}}
+                          <div class="added-to-cart" *ngIf="product.inCart">
+                            <img src="assets/images/add_shopping_cart.svg" alt="cart">
+                          </div>
+                      </button>
+                  </div>
+              </div>
+              <div class="button-price">
+                  <span class="mrp-span">{{'MRP ' + product.price}}</span>
+                  <button class="addToCart-btn primary" (click)="addToCart(product)">
+                      Buy Now
+                      <div class="added-to-cart" *ngIf="product.inCart">
+                        <img src="assets/images/add_shopping_cart.svg" alt="cart">
+                      </div>
+                  </button>
+              </div>
+
+          </div>
+      </div>
+  </ng-container>
+
+</section>

@@ -1,0 +1,11 @@
+<section class="products-section">
+  <section class="product-category">
+      <app-categorylist [categories]="categories" (categorySelected)="getCategory($event)"></app-categorylist>
+  </section>
+
+  <section class="main-section-container">
+      <app-productlist [categoryId]="categorySelected"></app-productlist>
+  </section>
+
+
+</section>

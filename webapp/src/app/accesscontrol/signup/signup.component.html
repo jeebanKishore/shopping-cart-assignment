@@ -1,0 +1,64 @@
+<section class="signup-section">
+  <article class="signup-content">
+      <h1>Signup</h1>
+      <h3>We do not share your personal details to anyone.</h3>
+  </article>
+  <article class="signup-form">
+      <form [formGroup]="signUpForm" class="signup-form" #signupform  action="/" method="POST">
+          <div class="form-group">
+              <mat-form-field>
+                  <mat-label>First Name</mat-label>
+                  <input matInput formControlName="firstName">
+                  <mat-error aria-live *ngIf="!signup.firstName.valid">
+                      First name is required
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group">
+              <mat-form-field>
+                  <mat-label>Last Name</mat-label>
+                  <input matInput formControlName="lastName">
+                  <mat-error aria-live *ngIf="!signup.lastName.valid">
+                      Last name is required
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group">
+              <mat-form-field>
+                  <mat-label>Email</mat-label>
+                  <input matInput formControlName="email">
+                  <mat-error aria-live *ngIf="!signup.email.valid">
+                      Email is not valid
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group">
+              <mat-form-field>
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" formControlName="password">
+                  <mat-error aria-live *ngIf="signup.password.touched && signup.password.errors?.required">
+                      Password can't be empty
+                    </mat-error>
+                    <mat-error aria-live *ngIf="signup.password.touched && signup.password.errors?.pattern">
+                      Password should have minimum 6 characters, at least 1 letter and 1 number
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          <div class="form-group">
+              <mat-form-field>
+                  <mat-label>Confirm Password</mat-label>
+                  <input matInput type="password" formControlName="confirmPassword">
+                    <mat-error aria-live *ngIf="signup.confirmPassword.touched && signup.confirmPassword.errors?.mustMatch">
+                      Password doesn't match
+                    </mat-error>
+                </mat-form-field>
+          </div>
+          <button class="primary" type="submit" [disabled]='!signUpForm.valid' (click)="signupform.submit()">Signup</button>
+          <div class="form-group link-ref">
+            <a href="#" [routerLink]="['/accesscontrol/logIn']">Already have an account? Login</a>
+        </div>
+      </form>
+  </article>
+
+</section>
+
