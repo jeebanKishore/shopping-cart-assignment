@@ -1,0 +1,15 @@
+<aside class="category-sidemenu">
+  <article *ngFor="let category of categories">
+      <button tabindex="0" [routerLink]="['/product-page']"  routerLinkActive="active-category"  [queryParams]="{ category : category.id }">{{category.name}}</button>
+  </article>
+</aside>
+
+
+<section class="category-dropdown">
+  <mat-select class="category-select"  placeholder="All" [(value)]="categorySelected">
+      <mat-option value="" tabindex="0" [routerLink]="['/product-page']">All</mat-option>
+      <mat-option *ngFor="let category of categories" [value]="category.id" tabindex="0" [routerLink]="['/product-page']" [queryParams]="{ category : category.id }">
+          {{category.name}}
+      </mat-option>
+  </mat-select>
+</section>

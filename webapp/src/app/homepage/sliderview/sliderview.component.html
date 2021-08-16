@@ -1,0 +1,30 @@
+<section *ngIf="imageCollector$ | async as vm">
+  <!-- <h2>Automatic Slideshow</h2>
+    {{ vm.currentIndex + 1 }}
+    <div>
+      <button (click)="onSlidePause()">Pause </button>
+      <button (click)="onSlidePlay(vm.currentIndex)" style="margin-left:1em;">Play </button>
+    </div>
+    <p>Change image every 2 seconds:</p> -->
+
+  <div class="slideshow-container" (mouseenter)="onSlidePause()" (touchstart)="onTouchStart($event)"
+    (touchmove)="onTouchMove($event)" (touchend)="onTouchStop($event, vm.currentIndex, vm.imageUrls.length )"
+    (mouseleave)="onSlidePlay(vm.currentIndex)">
+    <div *ngFor="let imageUrl of vm.imageUrls; let i=index;" class="mySlides fade"
+      [class.active]="i === vm.currentIndex">
+      <img [src]="imageUrl.bannerImageUrl.replace('static', 'assets')" [alt]="imageUrl.bannerImageAlt">
+    </div>
+    <div class="dots-container">
+      <span *ngFor="let _ of vm.imageUrls; let i=index;" [class.active]="vm.currentIndex === i" (click)="dotClick(i)"
+        class="dot">
+      </span>
+    </div>
+    <div class="previous-button-container" (click)="previousImage(vm.currentIndex)" *ngIf="vm.currentIndex !== 0">
+      <img src="assets/images/arrow_back.svg" alt="Previous Banner">
+    </div>
+    <div class="next-button-container" (click)="nextImage(vm.currentIndex)" *ngIf="vm.currentIndex !== (vm.imageUrls.length-1)">
+      <img src="assets/images/arrow_forward.svg" alt="Next Banner">
+    </div>
+
+  </div>
+</section>

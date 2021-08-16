@@ -1,0 +1,239 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Dosis, "Helvetica Neue", sans-serif;
+}
+
+* {
+  font-size: 18px;
+  font-family: Dosis;
+  font-weight: 400;
+  color: #565656;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+a.active-link {
+  color: #d81b60 !important;
+}
+
+img:focus,
+a:focus,
+button:focus,
+article:focus {
+  outline: 2px solid #c9c7c7;
+}
+
+
+.mat-icon-button[aria-label="Next slide"] span mat-icon {
+  display: none !important;
+  background: #000 !important;
+  opacity: 0.4 !important;
+}
+
+.mat-icon-button[aria-label="Next slide"] span:after {
+  content: "NEXT";
+  color: #1a1a1a;
+  font-weight: 600;
+  cursor: pointer;
+  background: #939393;
+  opacity: 0.5;
+  font-size: 13px;
+  padding: 1px;
+}
+
+.mat-icon-button[aria-label="Previous slide"] span mat-icon {
+  display: none !important;
+}
+
+.mat-icon-button[aria-label="Previous slide"] span:after {
+  content: "PREV";
+  color: #1a1a1a;
+  font-weight: 600;
+  cursor: pointer;
+  background: #939393;
+  opacity: 0.5;
+  font-size: 13px;
+  padding: 1px;
+}
+
+.mat-mini-fab.mat-primary {
+  background-color: #7f7f7f !important;
+}
+
+h1 {
+  font-size: 120%;
+  font-weight: 700;
+  margin: 25px 0px;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 90%;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 2px auto;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+button.primary {
+  background: #d81b60;
+  font-size: 100%;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  height: 30px;
+  margin: 25px 0px;
+  min-width: 150px;
+  outline: none !important;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #d81b60 !important;
+}
+
+button:disabled {
+  opacity: 0.7;
+}
+
+
+.mat-drawer {
+  position: absolute !important;
+  height: calc(100vh - 110px) !important;
+  transition: 0.5s visiblity;
+  width: 100% !important;
+}
+
+.mat-drawer-side.mat-drawer-end {
+  border: none !important;
+}
+
+.mat-drawer-inner-container #cart-header {
+  display: flex !important;
+  align-items: center !important;
+  background: #000;
+  height: 6vh;
+}
+
+.mat-drawer-inner-container #cart-header .cart-header {
+  flex-grow: 10 !important;
+  padding: 10px;
+}
+
+.mat-drawer-inner-container #cart-header .cart-header h1 {
+  font-size: 90% !important;
+  margin: 0%;
+  color: #d4d4d4;
+}
+
+.mat-drawer-inner-container #cart-header #close-cart {
+  flex-grow: 1 !important;
+  cursor: pointer;
+}
+
+
+
+.mat-drawer-inner-container .cart-item-container {
+  background-color: #ececec;
+  height: calc(100% - 6vh);
+}
+
+.mat-drawer-inner-container .cart-item-container .empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.mat-drawer-inner-container .cart-item-container .empty-cart h1 {
+  font-size: 1.5rem;
+  margin: 0.2rem;
+}
+
+.mat-drawer-inner-container .cart-item-container .empty-cart h2 {
+  font-size: 0.8rem;
+}
+
+.mat-drawer-inner-container .cart-item-container .cart-item-inner {
+  height: 8vh;
+  padding: 0.5rem;
+}
+
+.mat-drawer-inner-container .cart-item-container .cart-item-inner .cart-item-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0px 5px;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  height: inherit;
+}
+
+.mat-drawer-inner-container .cart-item-container .cart-item-inner .cart-item-placeholder img {
+  height: auto;
+  width: 14vh;
+}
+
+.mat-drawer-inner-container .cart-item-container .cart-item-inner .cart-item-placeholder h2 {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+
+.mat-form-field .mat-form-field-ripple {
+  background-color: #50dae2 !important;
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label mat-label {
+  color: #50dae2 !important;
+}
+
+.mat-form-field.mat-form-field-invalid .mat-form-field-ripple {
+  background-color: #f44336 !important;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {
+  margin-top: 0.3em !important;
+}
+
+mat-error {
+  font-size: 12px !important;
+  font-weight: 600;
+}
+
+.mat-form-field-label {
+  font-size: 12px !important;
+}
+
+mat-label {
+  font-size: 14px !important;
+  position: relative !important;
+  top: 2px !important;
+}
+
+input.mat-input-element {
+  font-size: 1em !important;
+  margin: 0px !important;
+  line-height: 1em !important;
+}
+
+
+@media only screen and (min-width: 480px) {
+  .carousel-slide {
+    height: 230px !important;
+    background-size: 100% 230px !important;
+  }
+}

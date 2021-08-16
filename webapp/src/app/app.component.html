@@ -1,0 +1,9 @@
+<app-header></app-header>
+<section class="app-container">
+    <router-outlet></router-outlet>
+    <section id="cartsection" [hidden]="!appstate.cartOpenState" class="cart-section" aria-label="Products Cart" aria-live="assertive">
+        <app-cartdetails tabindex="0"></app-cartdetails>
+    </section>
+</section>
+<app-footer></app-footer>
+<div id="backdrop" *ngIf="isBackDropOpen" aria-hidden="true" class="back-drop" (click)="appstate.subscribetoOpenCart.next(false)"></div>

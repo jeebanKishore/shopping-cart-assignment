@@ -1,0 +1,25 @@
+<header class="header" tabindex="0">
+    <section class="header-container">
+        <div class="header-logo-div">
+            <img src="assets/images/logo.png" [routerLink]="['/homepage']" alt="App Logo">
+        </div>
+        <div class="header-menu-div">
+            <nav class="header-menu-div-nav" aria-label="Navigation">
+                <a [routerLink]="['/homepage']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Home</a>
+                <a [routerLink]="['/product-page']" routerLinkActive="active-link">Products</a>
+            </nav>
+        </div>
+        <div class="header-login-cart-div">
+            <div class="header-login-cart-div-login">
+                <nav class="small-nav">
+                    <a href="#" [routerLink]="['/accesscontrol/logIn']" routerLinkActive="active-link">SignIn</a>
+                    <a href="#" [routerLink]="['/accesscontrol/signUp']" routerLinkActive="active-link">Register</a>
+                </nav>
+            </div>
+            <button tabindex="0" role="button" class="header-login-cart-div-cart" (click)="openCart()">
+                <img src="assets/images/cart.svg" alt="cart">
+                <span>{{ this.appStateService.cartItemCount + ((this.appStateService.cartItemCount>1)? ' items': ' item')}}</span>
+            </button>
+        </div>
+    </section>
+</header>

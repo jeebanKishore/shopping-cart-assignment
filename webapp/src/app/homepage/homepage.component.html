@@ -1,0 +1,6 @@
+<section class="carousal" role="main">
+  <app-sliderview></app-sliderview>
+</section>
+<section class="category-section" *ngFor="let category of categories;let even = even; let odd = odd" [attr.aria-label]="category.description">
+  <app-categorylist [category]='category' [isEven]='even'></app-categorylist>
+</section>

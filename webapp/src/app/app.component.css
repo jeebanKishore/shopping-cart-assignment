@@ -1,0 +1,38 @@
+.cart-section {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: inherit;
+  width: 100%;
+}
+
+.back-drop {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.616);
+  top: 0px;
+  left: 0px;
+}
+
+@media only screen and (min-width: 480px) {
+  .cart-section {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 1023px) {
+  .cart-section {
+    width: 30vw;
+  }
+
+  .smallResBackDrop {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1023px) and (max-width: 1200px) {
+  .cart-section {
+    width: 40vw;
+  }
+}

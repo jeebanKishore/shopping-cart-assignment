@@ -1,0 +1,25 @@
+footer {
+  background-color: #e2e2e2;
+  height: 1.5rem;
+  padding: 0px 5px;
+  position: fixed;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+}
+
+.footer-content {
+  font-size: 60%;
+  font-weight: 600;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 480px) {
+  footer {
+    padding: 0px 50px;
+  }
+}
